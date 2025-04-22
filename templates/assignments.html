@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/assignments.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Check Your Assignment</h1>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <form method="POST">
+            <label for="class">Class:</label>
+            <select name="class" required>
+                <option value="">Select Class</option>
+                {% for i in range(1, 11) %}
+                    <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="section">Section:</label>
+            <select name="section" required>
+                <option value="">Select Section</option>
+                {% for sec in ['A', 'B', 'C', 'D', 'E'] %}
+                    <option value="{{ sec }}">{{ sec }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="subject">Subject:</label>
+            <select name="subject" required>
+                <option value="">Select Subject</option>
+                {% for sub in ['Maths', 'Science', 'Hindi', 'SST', 'English'] %}
+                    <option value="{{ sub }}">{{ sub }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="date">Date:</label>
+            <input type="date" name="date" required>
+
+            <button type="submit">Get Assignment</button>
+        </form>
+
+        {% if assignment %}
+        <div class="result">
+            <h2>Assignment Details</h2>
+            <p><strong>Date:</strong> {{ assignment.date }}</p>
+            <p><strong>Notes:</strong> {{ assignment.notes }}</p>
+            <a href="{{ assignment.file_url }}" target="_blank" class="download-btn">Download File</a>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

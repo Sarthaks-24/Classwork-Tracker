@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Uploaded</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/upload_success.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Assignment Uploaded Successfully!</h2>
+        <p>Your assignment has been uploaded successfully.</p>
+        
+        <p>Here are the details:</p>
+        <ul>
+            <li><strong>Class:</strong> {{ class_name }}</li>
+            <li><strong>Section:</strong> {{ section }}</li>
+            <li><strong>Subject:</strong> {{ subject }}</li>
+            <li><strong>Date:</strong> {{ date }}</li>
+            <li><strong>Notes:</strong> {{ notes }}</li>
+            <li><strong>Assignment Link:</strong> <a href="{{ file_link }}" target="_blank">View Assignment</a></li>
+        </ul>
+
+
+        <a href="{{ url_for('home') }}" class="btn secondary-btn">Back to Home</a>
+    </div>
+</body>
+</html>

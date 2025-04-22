@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Classwork Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Classwork Tracker - Login</h1>
+        </div>
+    </header>
+
+    <!-- Login Form Section -->
+    <section class="login-section">
+        <div class="container">
+            <h2>Please Login</h2>
+            {% if error %}
+            <p class="error">{{ error }}</p>
+            {% endif %}
+            <form action="/login" method="POST" class="login-form">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="password" required>
+                    <span class="password-toggle"><i class="fas fa-eye"></i></span>
+                </div>                
+                <button type="submit" class="btn primary-btn">Login</button>
+                <p>Want to Make new Account? Contact the School Administration <a href ="/teacherregistration">for temporary puropse click here</a></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Classwork Tracker. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const passwordInput = document.querySelector('input[name="password"]');
+            const togglePassword = document.querySelector('.password-toggle');
+    
+            togglePassword.addEventListener('click', function() {
+                // Toggle password visibility
+                const type = passwordInput.type === 'password' ? 'text' : 'password';
+                passwordInput.type = type;
+                // Toggle eye icon (you can use icons or text like 'Show'/'Hide')
+                togglePassword.classList.toggle('fa-eye-slash');
+            });
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Assignment | Classwork Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
+    <style>
+        .circle-loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #4caf50;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Upload Assignment</h1>
+            <p><strong>Teacher Name:</strong> {{ teacher_name }}</p>
+            <p><strong>Username:</strong> {{ teacher_username }}</p>
+            <p><strong>Subject:</strong> {{ teacher_subject }}</p>
+        </div>
+    </header>
+
+    <!-- Upload Form Section -->
+    <section class="upload-section">
+        <div class="container">
+            <h2>Upload New Assignment</h2>
+            <form action="/upload" method="POST" enctype="multipart/form-data" class="upload-form" onsubmit="showLoadingBar(event)">
+            <input type="hidden" name="teacher_subject" value="{{ teacher_subject }}">
+
+            <div class="input-group">
+                <label for="class">Class</label>
+                <select id="class" name="class" required>
+                <option value="" disabled selected>Select Class</option>
+                <option value="1">Class 1</option>
+                <option value="2">Class 2</option>
+                <option value="3">Class 3</option>
+                <option value="4">Class 4</option>
+                <option value="5">Class 5</option>
+                <option value="6">Class 6</option>
+                <option value="7">Class 7</option>
+                <option value="8">Class 8</option>
+                <option value="9">Class 9</option>
+                <option value="10">Class 10</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="section">Section</label>
+                <select id="section" name="section" required>
+                <option value="" disabled selected>Select Section</option>
+                <option value="A">Section A</option>
+                <option value="B">Section B</option>
+                <option value="C">Section C</option>
+                <option value="D">Section D</option>
+                <option value="E">Section E</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="date">Assignment Date</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="input-group">
+                <label for="notes">Notes (Optional)</label>
+                <textarea id="notes" name="notes" placeholder="Enter any notes for the assignment"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="assignment_file">Upload Assignment File</label>
+                <input type="file" id="assignment_file" name="assignment_file" required>
+            </div>
+
+            <button type="submit" class="btn primary-btn">Upload Assignment</button>
+            </form>
+
+            <!-- Loading Bar -->
+            <div id="loading-bar" style="display: none; margin-top: 20px; text-align: center;">
+            <p>Uploading file...</p>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            </div>
+
+            <!-- Loading Circle -->
+            <div id="loading-circle" style="display: none; margin-top: 20px; text-align: center;">
+                <p>Uploading file...</p>
+                <div class="circle-loader"></div>
+            </div>
+        </div>      
+
+        <script>
+            function showLoadingBar(event) {
+                event.preventDefault(); // Prevent form submission
+                const loadingCircle = document.getElementById('loading-circle');
+                loadingCircle.style.display = 'block'; // Show the loading circle
+                event.target.submit(); // Submit the form immediately
+            }
+        </script>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Classwork Tracker. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

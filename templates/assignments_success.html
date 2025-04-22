@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/assignments_success.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Assignment Details</h1>
+        <div class="info-box">
+            <p><strong>Class:</strong> {{ class_name }}</p>
+            <p><strong>Section:</strong> {{ section }}</p>
+            <p><strong>Subject:</strong> {{ subject }}</p>
+            <p><strong>Date:</strong> {{ date }}</p>
+            <p><strong>Notes:</strong> {{ notes }}</p>
+            <a class="download-btn" href="{{ file_url }}" target="_blank" download>📄 View/Download File</a>
+        </div>
+        <a href="/" class="back-btn">⬅ Back to Home</a>
+    </div>
+</body>
+</html>

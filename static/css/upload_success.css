@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for content */
+.container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h2 {
+    color: #43cea2;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+/* List of assignment details */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+ul li {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+strong {
+    color: #43cea2;
+}
+
+/* Links and buttons */
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin: 10px 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+a.primary-btn {
+    background-color: #43cea2;
+    color: white;
+}
+
+a.primary-btn:hover {
+    background-color: #3bb08a;
+}
+
+a.secondary-btn {
+    background-color: #185a9d;
+    color: white;
+}
+
+a.secondary-btn:hover {
+    background-color: #144a7d;
+}
