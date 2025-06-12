@@ -28,7 +28,7 @@ def rename_file(Class,Section,Subject,Date): # Provide a new name for the PDF fi
     return file_new_name
 
 
-def file_upload(file_path,new_name,access_token): # Upload the file to Cloudinary and return the URL
+def file_upload(file_path,new_name,access_token): # Upload the file to dropbox and return the URL
      # Dropbox Configuration   
     dbx = dropbox.Dropbox(access_token)
     print('Dropbox connected')
