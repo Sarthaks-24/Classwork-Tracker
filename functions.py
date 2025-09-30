@@ -55,9 +55,9 @@ def store_metadata(class_name, section, subject, file_url, date, notes = "Not Ad
     
     try:
         db.collection("assignments").add(data)
-        print("✅ Document added.")
+        print("Document added.")
     except Exception as e:
-        print("❌ Error adding document:", e)
+        print("Error adding document:", e)
 
 def login(username,password): #Login Funtion for teachers to uplaod the data 
     db =firestore.client()
@@ -129,8 +129,9 @@ def get_access_token():
         access_token = response.json()["access_token"]
         return access_token
     else:
-        print("❌ Failed to get access token:", response.text)
+        print("Failed to get access token:", response.text)
         return None
+
 
 
 
