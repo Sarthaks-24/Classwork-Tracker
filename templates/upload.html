@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Assignment | Classwork Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="main-wrapper">
+        <div class="card">
+            <h1 class="title">Upload Assignment</h1>
+
+            <div class="teacher-details">
+                <p><strong>Teacher:</strong> {{ teacher_name }} ({{ teacher_username }})</p>
+                <p><strong>Subject:</strong> {{ teacher_subject }}</p>
+            </div>
+
+            <form action="/upload" method="POST" enctype="multipart/form-data" class="upload-form" onsubmit="showLoadingIndicator(event)">
+                <input type="hidden" name="teacher_subject" value="{{ teacher_subject or '' }}">
+                <input type="hidden" name="teacher_username" value="{{ teacher_username or '' }}">
+                <input type="hidden" name="teacher_name" value="{{ teacher_name or '' }}">
+
+                <div class="input-group">
+                    <label for="class">Class</label>
+                    <select id="class" name="class" required>
+                        <option value="" disabled selected>Select Class</option>
+                        {% for i in range(1, 11) %}
+                            <option value="{{ i }}">Class {{ i }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="section">Section</label>
+                    <select id="section" name="section" required>
+                        <option value="" disabled selected>Select Section</option>
+                        {% for sec in ['A', 'B', 'C', 'D', 'E'] %}
+                            <option value="{{ sec }}">Section {{ sec }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="date">Assignment Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="notes">Notes (Optional)</label>
+                    <textarea id="notes" name="notes" placeholder="Enter any notes for the assignment"></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="assignment_file">Upload Assignment File</label>
+                    <input type="file" id="assignment_file" name="assignment_file" required>
+                </div>
+
+                <button type="submit" class="btn">Upload Assignment</button>
+            </form>
+
+            <div id="loading-indicator" style="display: none;">
+                <p>Uploading file...</p>
+                <div class="circle-loader"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Classwork Tracker. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function showLoadingIndicator(event) {
+            // Hide the form and show the loader
+            const form = document.querySelector('.upload-form');
+            const loader = document.getElementById('loading-indicator');
+            form.style.display = 'none';
+            loader.style.display = 'block';
+            // The form will submit naturally after this script runs
+        }
+    </script>
+
+</body>
+</html>

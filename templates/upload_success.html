@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Success | Classwork Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/upload_success.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="main-wrapper">
+        <div class="card">
+            <h1 class="title">✅ Upload Confirmed</h1>
+            
+            <div class="teacher-details">
+            <p><strong>Name:</strong> {{ teacher_name }}</p>
+            <p><strong>Username:</strong> {{ teacher_username }}</p>
+            <p><strong>Subject:</strong> {{ teacher_subject }}</p>
+            </div>
+
+            <p class="subtitle">The assignment has been successfully transmitted to the database.</p>
+            
+            <div class="details-box">
+            <ul>
+                <li><strong>Class:</strong> {{ class_name }}</li>
+                <li><strong>Section:</strong> {{ section }}</li>
+                <li><strong>Date:</strong> {{ date }}</li>
+                <li><strong>Notes:</strong> {{ notes }}</li>
+                <li><strong>File Link:</strong> <a href="{{ file_link }}" target="_blank">View Uploaded File</a></li>
+            </ul>
+            </div>
+
+            <a href="{{ url_for('upload_page', teacher_username=teacher_username, teacher_subject=teacher_subject ,teacher_name=teacher_name) }}" class="btn">Upload Another</a>
+            <a href="{{ url_for('home') }}" class="btn outline">Back to Home</a>
+        </div>
+    </main>
+</body>
+</html>

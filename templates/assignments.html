@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/assignments.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="card">
+            <h1 class="title">📡 Query Assignment Database</h1>
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+            <form method="POST">
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="class">Class:</label>
+                        <select id="class" name="class" required>
+                            <option value="">Select Class</option>
+                            {% for i in range(1, 11) %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="section">Section:</label>
+                        <select id="section" name="section" required>
+                            <option value="">Select Section</option>
+                            {% for sec in ['A', 'B', 'C', 'D', 'E'] %}
+                                <option value="{{ sec }}">{{ sec }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="subject">Subject:</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select Subject</option>
+                            {% for sub in ['Maths', 'Science', 'Hindi', 'SST', 'English'] %}
+                                <option value="{{ sub }}">{{ sub }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                </div>
+
+                <button type="submit">Fetch Assignment</button>
+            </form>
+
+            {% if assignment %}
+            <div class="result">
+                <h2>Assignment Details</h2>
+                <p><strong>Date:</strong> {{ assignment.date }}</p>
+                <p><strong>Notes:</strong> {{ assignment.notes }}</p>
+                <a href="{{ assignment.file_url }}" target="_blank" class="download-btn">Download File</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Card & Wrapper */
+.main-wrapper {
+    width: 100%;
+    max-width: 600px;
+}
+
+.card {
+    background-color: rgba(22, 27, 34, 0.8);
+    border: 1px solid #30363d;
+    padding: 40px 35px;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(46, 160, 67, 0.25);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.4rem;
+    color: #3fb950;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(63, 185, 80, 0.5);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #8b949e;
+    margin-bottom: 30px;
+}
+
+/* Details Box */
+.details-box {
+    background-color: rgba(13, 17, 23, 0.7);
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.details-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.details-box li {
+    font-size: 1rem;
+    padding: 12px 0;
+    border-bottom: 1px solid #21262d;
+}
+
+.details-box li:last-child {
+    border-bottom: none;
+}
+
+.details-box strong {
+    color: #8b949e;
+    margin-right: 10px;
+}
+
+.details-box a {
+    color: #58a6ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.details-box a:hover {
+    text-decoration: underline;
+}
+
+/* Button Styles */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin-top: 15px;
+}
+
+.btn {
+    background: #238636;
+    color: white;
+    border: 1px solid #2ea043;
+}
+
+.btn:hover {
+    background: #2ea043;
+    border-color: #3fb950;
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(63, 185, 80, 0.5);
+}
+
+.btn.outline {
+    background: transparent;
+    color: #8b949e;
+    border: 1px solid #30363d;
+}
+
+.btn.outline:hover {
+    background: rgba(139, 148, 158, 0.1);
+    color: white;
+    border-color: #8b949e;
+    box-shadow: none;
+}

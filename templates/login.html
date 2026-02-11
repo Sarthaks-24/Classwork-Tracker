@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Classwork Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="main-wrapper">
+        <div class="card">
+            <h1 class="title">Classwork Tracker - Login</h1>
+            <p class="subtitle">Please Login</p>
+            
+            {% if error %}
+            <p class="error">{{ error }}</p>
+            {% endif %}
+
+            <form action="/login" method="POST" class="login-form">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <button type="button" class="password-toggle" aria-label="Show password" style="cursor:pointer;">👁️</button>
+                </div>                
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <p class="footer-link">
+                Want to make a new account? Contact the School Administration.
+                <a href="/teacherregistration">For temporary purpose click here</a>
+            </p>
+        </div>
+    </main>
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Classwork Tracker. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const passwordInput = document.querySelector('input[name="password"]');
+            const togglePassword = document.querySelector('.password-toggle');
+
+            togglePassword.addEventListener('click', function() {
+                // Toggle password visibility
+                passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
+            });
+        });
+    </script>
+</body>
+</html>

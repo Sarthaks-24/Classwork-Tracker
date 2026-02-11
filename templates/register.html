@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register | Classwork Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="card">
+            <h1 class="title">👩‍🏫 Teacher Registration</h1>
+            
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+
+            <form method="POST">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="text" name="username" placeholder="Set Username" required>
+                <input type="password" name="password" placeholder="Set Password" required>
+                <input type="password" name="rpassword" placeholder="Re-enter the Password" required>
+
+                <select name="subject" required>
+                    <option value="" disabled selected>Select Subject</option>
+                    <option value="maths">Maths</option>
+                    <option value="science">Science</option>
+                    <option value="hindi">Hindi</option>
+                    <option value="sst">SST</option>
+                    <option value="english">English</option>
+                </select>
+
+                <button type="submit">Create Account</button>
+            </form>
+            <p class="link">Already have an account? <a href="/login">Login here</a></p>
+        </div>
+    </div>
+</body>
+</html>

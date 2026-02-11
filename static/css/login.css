@@ -1,0 +1,160 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Card & Wrapper */
+.main-wrapper {
+    width: 100%;
+    max-width: 420px;
+}
+
+.card {
+    background-color: rgba(22, 27, 34, 0.8);
+    border: 1px solid #30363d;
+    padding: 40px 35px;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(88, 166, 255, 0.15);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    color: #58a6ff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #8b949e;
+    margin-bottom: 30px;
+}
+
+/* Form Styles */
+.login-form {
+    width: 100%;
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative; /* Added for positioning the toggle icon */
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #8b949e;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Added padding to prevent text from overlapping the icon */
+input[type="password"] {
+    padding-right: 40px; 
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #58a6ff;
+    box-shadow: 0 0 10px rgba(88, 166, 255, 0.4);
+}
+
+/* NEW: Styles for the password toggle button */
+.password-toggle {
+    position: absolute;
+    top: 38px; /* Adjust based on label height */
+    right: 10px;
+    background: none;
+    border: none;
+    color: #8b949e;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    background: #238636;
+    color: white;
+    border: 1px solid #2ea043;
+    border-radius: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background: #2ea043;
+    border-color: #3fb950;
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(63, 185, 80, 0.5);
+}
+
+.error {
+    color: #f85149;
+    background-color: rgba(248, 81, 73, 0.1);
+    border: 1px solid rgba(248, 81, 73, 0.5);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.footer-link {
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: #8b949e;
+}
+
+.footer-link a {
+    color: #58a6ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-link a:hover {
+    text-decoration: underline;
+}
+
+/* NEW: Styles for the footer */
+footer {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    color: #8b949e;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,174 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Card & Wrapper */
+.main-wrapper {
+    width: 100%;
+    max-width: 500px;
+}
+
+.card {
+    background-color: rgba(22, 27, 34, 0.8);
+    border: 1px solid #30363d;
+    padding: 40px 35px;
+    border-radius: 12px;
+    box-shadow: 0 0 40px rgba(46, 160, 67, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    color: #3fb950; /* MODIFIED: Color changed to green */
+    margin-bottom: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-shadow: 0 0 15px rgba(63, 185, 80, 0.6); /* MODIFIED: Added green glow */
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Creates space between form rows and the button */
+}
+
+/* NEW: Style for a row of form fields */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+/* NEW: Style for a single label-input pair */
+.form-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1; /* Allows the fields to grow and fill the row */
+}
+
+label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #c9d1d9;
+    white-space: nowrap; /* Prevents label text from wrapping */
+}
+
+select,
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    border: 1px solid #30363d;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    transition: all 0.2s ease-in-out;
+    flex: 1; /* Allows input to take remaining space */
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+select:focus,
+input[type="date"]:focus {
+    outline: none;
+    border-color: #2ea043;
+    box-shadow: 0 0 10px rgba(46, 160, 67, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    background: #238636;
+    color: white;
+    border: 1px solid #2ea043;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    background: #2ea043;
+    border-color: #3fb950;
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(63, 185, 80, 0.5);
+}
+
+.error {
+    color: #f85149;
+    background-color: rgba(248, 81, 73, 0.1);
+    border: 1px solid rgba(248, 81, 73, 0.5);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Result Box */
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgba(13, 17, 23, 0.7);
+    border: 1px solid #30363d;
+    border-radius: 8px;
+}
+
+.result h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #58a6ff;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.result p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.download-btn {
+    display: inline-block;
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    background: transparent;
+    color: #58a6ff;
+    border: 1px solid #58a6ff;
+}
+
+.download-btn:hover {
+    background: rgba(88, 166, 255, 0.15);
+    color: white;
+    border-color: #80b6ff;
+    box-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+}

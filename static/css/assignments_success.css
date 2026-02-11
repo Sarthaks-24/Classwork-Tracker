@@ -1,0 +1,119 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Card & Wrapper */
+.main-wrapper {
+    width: 100%;
+    max-width: 550px;
+}
+
+.card {
+    background-color: rgba(22, 27, 34, 0.8);
+    border: 1px solid #30363d;
+    padding: 40px 35px;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(88, 166, 255, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+.title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    color: #58a6ff;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Details Box */
+.details-box {
+    background-color: rgba(13, 17, 23, 0.7);
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.details-box p {
+    font-size: 1.1rem;
+    border-bottom: 1px solid #21262d;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.details-box p:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.details-box p.notes {
+    line-height: 1.6;
+}
+
+.details-box strong {
+    color: #8b949e;
+    margin-right: 10px;
+}
+
+/* Button Styles */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn {
+    background: #238636;
+    color: white;
+    border: 1px solid #2ea043;
+}
+
+.btn:hover {
+    background: #2ea043;
+    border-color: #3fb950;
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(63, 185, 80, 0.5);
+}
+
+.btn.outline {
+    background: transparent;
+    color: #8b949e;
+    border: 1px solid #30363d;
+}
+
+.btn.outline:hover {
+    background: rgba(139, 148, 158, 0.1);
+    color: white;
+    border-color: #8b949e;
+    box-shadow: none;
+}

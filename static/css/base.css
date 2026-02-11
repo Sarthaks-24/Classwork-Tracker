@@ -1,0 +1,96 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #0d1117;
+    background-image: 
+        linear-gradient(rgba(13, 17, 23, 0.95), rgba(13, 17, 23, 0.95)),
+        url("https://www.transparenttextures.com/patterns/cubes.png");
+    color: #c9d1d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main-wrapper {
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+.hero-card {
+    background-color: rgba(22, 27, 34, 0.8);
+    border: 1px solid #30363d;
+    padding: 40px 35px;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 191, 255, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+.hero-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.6rem;
+    color: #58a6ff;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #8b949e;
+    margin-bottom: 40px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    background: #238636;
+    color: white;
+    border: 1px solid #2ea043;
+    border-radius: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 0 15px rgba(46, 160, 67, 0.3);
+}
+
+.btn:hover {
+    background: #2ea043;
+    border-color: #3fb950;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 0 25px rgba(63, 185, 80, 0.5);
+}
+
+.btn.outline {
+    background: transparent;
+    color: #58a6ff;
+    border: 1px solid #58a6ff;
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
+}
+
+.btn.outline:hover {
+    background: rgba(88, 166, 255, 0.15);
+    color: white;
+    border-color: #80b6ff;
+    box-shadow: 0 0 25px rgba(88, 166, 255, 0.5);
+}
